@@ -1,22 +1,35 @@
 import { sis } from './animation';
 import './styles/styles.css'
-var THREE = require('three');
+const THREE = require('three');
+const OrbitControls = require('three-orbitcontrols');
 
-console.log(sis("I love ya legit!"));
 
-let scene, camera, renderer, container;
+
+// var events = require('threex.domevents')
+
+// console.log("anything? ", events.THREEx)
+
+// var THREEx = {}
+// initializeDomEvents.(THREE, THREEx)
+
+
+
+
+
+console.log(sis("I love ya but work!"));
+
+let scene, camera, renderer, container, controls;
 let cubeA, cubeB, domEvents;
 
 
 console.log('hello from group.js');
 
-
-$(document).ready(function(){
-  // x = document.getElementById( 'x' );
-  container = $('#container')[0];
+window.addEventListener('load', (event) => {
+  container = document.getElementById('container');
   init()
   animate()
 });
+
 
 
 function init(){
@@ -83,30 +96,30 @@ function testGroup(){
   cubeB = new THREE.Mesh( geometryB, materialB ); //black
   cubeB.position.set( -1, -1, 0 );
 
-  domEvents	= new THREEx.DomEvents(camera, renderer.domElement)
-
-  domEvents.addEventListener(cubeA, 'click', function(event){
-  	console.log('you clicked on green cubeA')
-    cubeA.material.color.setHex( 0x00ff00 )
-    // window.open("https://www.w3schools.com");
-  }, false)
-
-  domEvents.addEventListener(cubeA, 'mouseover', function(event){
-    cubeA.material.color.setHex( 0xffffff )
-    console.log('you moused over green cubeA')
-  }, false)
-
-  domEvents.addEventListener(cubeA, 'mouse out', function(event){
-    cubeA.material.color.setHex( 0x00ff00 )
-    console.log('you moused off green cubeA')
-  }, false)
+  // domEvents	= new THREEx.DomEvents(camera, renderer.domElement)
+  //
+  // domEvents.addEventListener(cubeA, 'click', function(event){
+  // 	console.log('you clicked on green cubeA')
+  //   cubeA.material.color.setHex( 0x00ff00 )
+  //   // window.open("https://www.w3schools.com");
+  // }, false)
+  //
+  // domEvents.addEventListener(cubeA, 'mouseover', function(event){
+  //   cubeA.material.color.setHex( 0xffffff )
+  //   console.log('you moused over green cubeA')
+  // }, false)
+  //
+  // domEvents.addEventListener(cubeA, 'mouse out', function(event){
+  //   cubeA.material.color.setHex( 0x00ff00 )
+  //   console.log('you moused off green cubeA')
+  // }, false)
 
   // domEvents.addEventListener(cubeB, 'click', function(event){
   //   console.log('you clicked on black cubeB')
   // }, false)
 
-  var url		= 'http://jeromeetienne.github.io/threex/'
-  var linkify	= THREEx.Linkify(domEvents, cubeB, url, true)
+  // var url		= 'http://jeromeetienne.github.io/threex/'
+  // var linkify	= THREEx.Linkify(domEvents, cubeB, url, true)
 
 
   //create a group and add the two cubes
