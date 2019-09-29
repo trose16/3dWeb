@@ -1,18 +1,18 @@
-import { sis } from './animation';
+// import { sis } from './animation';
 import './styles/styles.css'
 const THREE = require('three');
 const OrbitControls = require('three-orbitcontrols');
 var initializeDomEvents = require('threex-domevents')
 var THREEx = {}
 initializeDomEvents(THREE, THREEx)
-console.log("DOM", THREEx)
+console.log("Hello from 3D server index.js")
 
 
 
 
 
 
-console.log(sis("I love ya but work!"));
+// console.log(sis("I love ya but work!"));
 
 let scene, camera, renderer, container, controls;
 let cubeA, cubeB, domEvents;
