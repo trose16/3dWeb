@@ -137,6 +137,10 @@ window.addEventListener('load', (event) => {
 
   domEvents.addEventListener(cubeA, 'click', toggle.on, false)
 
+  let logo = document.getElementById("home-logo");
+
+  logo.addEventListener('click', toggle.on)
+
   domEvents.addEventListener(cubeA, 'mouseover', function(event){
     cubeA.material.color.setHex( 0xffffff )
     console.log('you moused over green cubeA')
@@ -149,5 +153,9 @@ window.addEventListener('load', (event) => {
 
   domEvents.addEventListener(cubeB, 'click', function(event){
     console.log('you clicked on black cubeB')
+  }, false)
+
+  domEvents.addEventListener(cubeB, 'mouseover', function(event){
+    // group.rotation.y += 0.1;
   }, false)
 });

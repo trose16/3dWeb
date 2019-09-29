@@ -9,6 +9,15 @@
 #test {
   color: red;
 }
+#home-logo img {
+  width: 200px;
+  height: auto;
+  transition: width 0.5s;
+}
+#home-logo img:hover {
+  width: 230px;
+}
+
 body {
   margin: 0;
 }
