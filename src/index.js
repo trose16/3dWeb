@@ -8,9 +8,11 @@ initializeDomEvents(THREE, THREEx)
 console.log("Hello from 3D server index.js")
 
 
+const toggle = require('./animation')
 
+let overlay = document.getElementById('overlay');
 
-
+overlay.addEventListener('click', toggle.off, false)
 
 // console.log(sis("I love ya but work!"));
 
@@ -99,6 +101,8 @@ function testGroup(){
     cubeA.material.color.setHex( 0x00ff00 )
     // window.open("https://www.w3schools.com");
   }, false)
+
+  domEvents.addEventListener(cubeA, 'click', toggle.on, false)
 
   domEvents.addEventListener(cubeA, 'mouseover', function(event){
     cubeA.material.color.setHex( 0xffffff )
