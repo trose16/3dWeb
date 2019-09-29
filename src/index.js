@@ -17,7 +17,7 @@ overlay.addEventListener('click', toggle.off, false)
 // console.log(sis("I love ya but work!"));
 
 let scene, camera, renderer, container, controls;
-let cubeA, cubeB, domEvents;
+let cubeA, cubeB, group, domEvents;
 
 
 console.log('hello from group.js');
@@ -124,7 +124,7 @@ function testGroup(){
 
   //create a group and add the two cubes
   //These cubes can now be rotated / scaled etc as a group
-  var group = new THREE.Group();
+  group = new THREE.Group();
   group.add( cubeA );
   group.add( cubeB );
 
@@ -149,6 +149,7 @@ function onWindowResize() {
 
 function animate(){
   // add object animation here
+  group.rotation.y += 0.005;
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
