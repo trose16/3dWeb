@@ -3,6 +3,8 @@
   position: relative;
   text-align: center;
   color: white;
+  background-image: linear-gradient(125deg, #051937, #45245b, #8f1e63, #ce224b, #ee5a0d, #ffe200, #ffc100, #ffa000, #f87e00, #ee5a0d);
+  background-size: 400%;
 }
 #test {
   color: red;
@@ -14,6 +16,17 @@ canvas {
   width: 100% !important;
   height: 100% !important;
 }
+
+.animation-gradient {
+  animation: day-night 60s ease infinite;
+}
+
+@keyframes day-night {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
 
 
 /* Bottom left text */
