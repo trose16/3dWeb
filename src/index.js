@@ -2,15 +2,11 @@ import { sis } from './animation';
 import './styles/styles.css'
 const THREE = require('three');
 const OrbitControls = require('three-orbitcontrols');
+var initializeDomEvents = require('threex-domevents')
+var THREEx = {}
+initializeDomEvents(THREE, THREEx)
+console.log("DOM", THREEx)
 
-
-
-// var events = require('threex.domevents')
-
-// console.log("anything? ", events.THREEx)
-
-// var THREEx = {}
-// initializeDomEvents.(THREE, THREEx)
 
 
 
@@ -96,27 +92,27 @@ function testGroup(){
   cubeB = new THREE.Mesh( geometryB, materialB ); //black
   cubeB.position.set( -1, -1, 0 );
 
-  // domEvents	= new THREEx.DomEvents(camera, renderer.domElement)
-  //
-  // domEvents.addEventListener(cubeA, 'click', function(event){
-  // 	console.log('you clicked on green cubeA')
-  //   cubeA.material.color.setHex( 0x00ff00 )
-  //   // window.open("https://www.w3schools.com");
-  // }, false)
-  //
-  // domEvents.addEventListener(cubeA, 'mouseover', function(event){
-  //   cubeA.material.color.setHex( 0xffffff )
-  //   console.log('you moused over green cubeA')
-  // }, false)
-  //
-  // domEvents.addEventListener(cubeA, 'mouse out', function(event){
-  //   cubeA.material.color.setHex( 0x00ff00 )
-  //   console.log('you moused off green cubeA')
-  // }, false)
+  domEvents	= new THREEx.DomEvents(camera, renderer.domElement)
 
-  // domEvents.addEventListener(cubeB, 'click', function(event){
-  //   console.log('you clicked on black cubeB')
-  // }, false)
+  domEvents.addEventListener(cubeA, 'click', function(event){
+  	console.log('you clicked on green cubeA')
+    cubeA.material.color.setHex( 0x00ff00 )
+    // window.open("https://www.w3schools.com");
+  }, false)
+
+  domEvents.addEventListener(cubeA, 'mouseover', function(event){
+    cubeA.material.color.setHex( 0xffffff )
+    console.log('you moused over green cubeA')
+  }, false)
+
+  domEvents.addEventListener(cubeA, 'mouse out', function(event){
+    cubeA.material.color.setHex( 0x00ff00 )
+    console.log('you moused off green cubeA')
+  }, false)
+
+  domEvents.addEventListener(cubeB, 'click', function(event){
+    console.log('you clicked on black cubeB')
+  }, false)
 
   // var url		= 'http://jeromeetienne.github.io/threex/'
   // var linkify	= THREEx.Linkify(domEvents, cubeB, url, true)
