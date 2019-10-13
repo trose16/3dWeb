@@ -6,7 +6,7 @@ npm run build
 
 
 UPCOMING
-Add in OrbitControls for mobile
+Ensure controls work for mobile
 
 
 
